@@ -4,7 +4,7 @@ export class A0Agent implements Agent{
 
 
     get(input: number[]): number[] {
-
+ 
     }
 
 }
@@ -15,7 +15,6 @@ export class A0Agent implements Agent{
 
 SET 1
 SET 0
-JMP
 MOV
 
 
