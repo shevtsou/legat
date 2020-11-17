@@ -1,4 +1,7 @@
+import { EnvResponse } from "./EnvResponse";
+
 export interface Manipulator {
-    get(): number[]
+    get(): EnvResponse;
     put(input: number[])
+    getTotalScore(): number;
 }

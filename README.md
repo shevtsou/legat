@@ -4,4 +4,5 @@
 3.1 One possible solution = try to "bruteforce" all code slutions
 3.1.1 Issue = too low performance of current computer power
 3.2 Find algorithm by yourself
-3.2.1
+4. Implementation details
+4.1 Difficulty for environment calculated by how much logical, structure operators need to implement solution for it.
