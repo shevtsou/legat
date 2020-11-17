@@ -2,9 +2,13 @@ import { Agent } from "./Agent";
 
 export class A0Agent implements Agent{
 
+    getName() {
+        return "A0Agent"
+    }
 
-    get(input: number[]): number[] {
- 
+    get({ data }): number[] {
+        const value = data[0];
+        return [value];
     }
 
 }

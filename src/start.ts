@@ -5,6 +5,8 @@ import { ConstantEnvironmentFactory } from "./env/3diff/ContstantEnvironment/Con
 import { Env } from "./env/api/Env";
 import { Manipulator } from "./env/api/Manipulator";
 import * as readline from 'readline-sync'
+import { Estimator } from "./estimator/Estimator";
+import { A0Agent } from "./agents/A0Agent";
 
 // const input = [1, 2, 3, 4]
 
@@ -29,15 +31,21 @@ import * as readline from 'readline-sync'
 
 
 // */
-const env: Env = new ConstantEnvironmentFactory().generateInstance();
-const manipulator: Manipulator =  env.generateManipulator();
+// const env: Env = new ConstantEnvironmentFactory().generateInstance();
+// const manipulator: Manipulator =  env.generateManipulator();
 
-while (true) {
-    const question = readline.question("> ");
-    manipulator.put([parseFloat(question)]);
-    let res = manipulator.get()
-    console.log(`Response: `, res.data)
-    console.log(`Response Score: `, res.score)
-    console.log(`Total Score: `, manipulator.getTotalScore())
+// while (true) {
+//     const question = readline.question("> ");
+//     manipulator.put([parseFloat(question)]);
+//     let res = manipulator.get()
+//     console.log(`Response: `, res.data)
+//     console.log(`Response Score: `, res.score)
+//     console.log(`Total Score: `, manipulator.getTotalScore())
 
-}
+// }
+
+
+const estimator = new Estimator();
+estimator.addAgent(new A0Agent())
+estimator.addEnvFactory(new ConstantEnvironmentFactory())
+console.log(estimator.getEstimations(100))

@@ -1,3 +1,6 @@
+import { EnvResponse } from "../env/api/EnvResponse";
+
 export interface Agent {
-    get(input: number[]): number[]
+    getName(): string;
+    get(input: EnvResponse): number[]
 }
